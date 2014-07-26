@@ -45,6 +45,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    ((UIScrollView *)[self.view viewWithTag:100]).keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
 }
 
 - (void)didReceiveMemoryWarning
