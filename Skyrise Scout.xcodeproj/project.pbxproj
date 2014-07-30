@@ -231,6 +231,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Octogonaus;
 				TargetAttributes = {
+					0CA0ABE4192E2C40000D681B = {
+						DevelopmentTeam = 7ABRP5477B;
+					};
 					0CA0AC0B192E2C41000D681B = {
 						TestTargetID = 0CA0ABE4192E2C40000D681B;
 					};
@@ -425,6 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Skyrise Scout/Skyrise Scout-Prefix.pch";
 				INFOPLIST_FILE = "Skyrise Scout/Skyrise Scout-Info.plist";
@@ -439,6 +443,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Skyrise Scout/Skyrise Scout-Prefix.pch";
 				INFOPLIST_FILE = "Skyrise Scout/Skyrise Scout-Info.plist";
