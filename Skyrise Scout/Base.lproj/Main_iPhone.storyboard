@@ -50,7 +50,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail2" id="jUr-3t-vfg"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="push" identifier="showDetail" id="jUr-3t-vfg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -62,6 +62,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Teams" id="tQt-TN-PWz"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="mLL-gJ-YKr" id="etY-zB-b9L"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -293,25 +296,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="928" y="-102"/>
-        </scene>
-        <!--Picture Chooser View Controller-->
-        <scene sceneID="3X1-0E-LXO">
-            <objects>
-                <viewController id="OtX-GM-dBZ" customClass="OCTPictureChooserViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Mg7-Xc-m0t"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ohs-S8-LRs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Eq7-C2-ePy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uX0-Lb-10p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1415" y="64"/>
         </scene>
     </scenes>
     <resources>

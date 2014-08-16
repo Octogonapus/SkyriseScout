@@ -2,7 +2,7 @@
 //  Team.h
 //  Skyrise Scout
 //
-//  Created by Ryan Benasutti on 8/15/14.
+//  Created by Octogonaus on 8/15/14.
 //  Copyright (c) 2014 Octogonaus. All rights reserved.
 //
 

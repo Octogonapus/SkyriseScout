@@ -2,7 +2,7 @@
 //  main.m
 //  Skyrise Scout
 //
-//  Created by Ryan Benasutti on 5/22/14.
+//  Created by Octogonaus on 5/22/14.
 //  Copyright (c) 2014 Octogonaus. All rights reserved.
 //
 

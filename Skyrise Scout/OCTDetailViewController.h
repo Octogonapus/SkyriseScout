@@ -7,12 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OCTAppDelegate.h"
 
-@interface OCTDetailViewController : UIViewController <UISplitViewControllerDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@class OCTDetailViewController;
+@protocol OCTDetailViewController <NSObject>
+- (void)addItemViewController:(OCTDetailViewController *)controller didFinishEnteringItem:(NSString *)item forIndex:(NSInteger)index;
+@end
+
+@interface OCTDetailViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+@property (weak, nonatomic) id<OCTDetailViewController> delegate;
+@property (nonatomic) NSInteger index;
+@property (weak, nonatomic) NSString *teamNameRef;
 
 @property (weak, nonatomic) IBOutlet UIImageView *robotPicture;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *robotPictureTapRecognizer;

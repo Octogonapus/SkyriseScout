@@ -8,8 +8,6 @@
 
 #import "OCTMasterViewController.h"
 
-#import "OCTDetailViewController.h"
-
 @interface OCTMasterViewController ()
 {
     NSMutableArray *_objects;
@@ -20,11 +18,6 @@
 
 - (void)awakeFromNib
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad)
-    {
-        self.clearsSelectionOnViewWillAppear = NO;
-        self.preferredContentSize = CGSizeMake(320.0, 600.0);
-    }
     
     [super awakeFromNib];
 }
@@ -38,6 +31,8 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (OCTDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    _objects = [[NSMutableArray alloc] initWithArray:[userDefaults objectForKey:@"teamNames"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,8 +67,8 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    cell.textLabel.text = _objects[indexPath.row];
+    
     return cell;
 }
 
@@ -110,9 +105,23 @@
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+        [[segue destinationViewController] setTeamNameRef:_objects[indexPath.row]];
+        [[segue destinationViewController] setDelegate:self];
+        [[segue destinationViewController] setIndex:indexPath.row];
     }
+}
+
+#pragma mark - Data pass from child
+
+- (void)addItemViewController:(OCTDetailViewController *)controller didFinishEnteringItem:(NSString *)item forIndex:(NSInteger)index
+{
+    [_objects replaceObjectAtIndex:index withObject:item];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:_objects forKey:@"teamNames"];
+    [userDefaults synchronize];
+    
+    [self.tableView reloadData];
 }
 
 @end

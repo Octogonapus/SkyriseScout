@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "OCTDetailViewController.h"
 
 @class OCTDetailViewController;
 
-@interface OCTMasterViewController : UITableViewController
+@interface OCTMasterViewController : UITableViewController <OCTDetailViewController>
 
 @property (strong, nonatomic) OCTDetailViewController *detailViewController;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
