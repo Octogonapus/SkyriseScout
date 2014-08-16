@@ -25,7 +25,8 @@
 		0CA0AC1A192E2C41000D681B /* Skyrise_ScoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA0AC19192E2C41000D681B /* Skyrise_ScoutTests.m */; };
 		0CA0AC24192E2DD1000D681B /* robot-character.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0CA0AC23192E2DD1000D681B /* robot-character.jpg */; };
 		1A1434B4199EE70B00B6411D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1434AE199EE21500B6411D /* CoreData.framework */; };
-		1A1434BA199EE75100B6411D /* TeamDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A1434B8199EE75100B6411D /* TeamDataModel.xcdatamodeld */; };
+		1A1434BD199EE8D900B6411D /* TeamDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A1434BB199EE8D900B6411D /* TeamDataModel.xcdatamodeld */; };
+		1A1434C0199EECF000B6411D /* Team.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1434BF199EECF000B6411D /* Team.m */; };
 		1A8E46A5192EAB400083F7D9 /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A4192EAB400083F7D9 /* thumb_up.png */; };
 		1A8E46A7192EABD30083F7D9 /* thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A6192EABD30083F7D9 /* thumb_down.png */; };
 		1A8E46A9192EABDA0083F7D9 /* slow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A8192EABDA0083F7D9 /* slow.png */; };
@@ -67,7 +68,9 @@
 		0CA0AC19192E2C41000D681B /* Skyrise_ScoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Skyrise_ScoutTests.m; sourceTree = "<group>"; };
 		0CA0AC23192E2DD1000D681B /* robot-character.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "robot-character.jpg"; sourceTree = "<group>"; };
 		1A1434AE199EE21500B6411D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		1A1434B9199EE75100B6411D /* TeamDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamDataModel.xcdatamodel; sourceTree = "<group>"; };
+		1A1434BC199EE8D900B6411D /* TeamDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamDataModel.xcdatamodel; sourceTree = "<group>"; };
+		1A1434BE199EECF000B6411D /* Team.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Team.h; sourceTree = "<group>"; };
+		1A1434BF199EECF000B6411D /* Team.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Team.m; sourceTree = "<group>"; };
 		1A8E46A4192EAB400083F7D9 /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
 		1A8E46A6192EABD30083F7D9 /* thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_down.png; sourceTree = "<group>"; };
 		1A8E46A8192EABDA0083F7D9 /* slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slow.png; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 				0CA0AC03192E2C40000D681B /* OCTDetailViewController.h */,
 				0CA0AC04192E2C40000D681B /* OCTDetailViewController.m */,
 				0CA0AC06192E2C40000D681B /* Images.xcassets */,
+				1A1434C1199EED5100B6411D /* Data Model */,
 				0CA0AC26192E2DF0000D681B /* Assets */,
 				0CA0ABEF192E2C40000D681B /* Supporting Files */,
 			);
@@ -155,7 +159,6 @@
 				0CA0ABF1192E2C40000D681B /* InfoPlist.strings */,
 				0CA0ABF4192E2C40000D681B /* main.m */,
 				0CA0ABF6192E2C40000D681B /* Skyrise Scout-Prefix.pch */,
-				1A1434B8199EE75100B6411D /* TeamDataModel.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -188,6 +191,16 @@
 				0CA0AC23192E2DD1000D681B /* robot-character.jpg */,
 			);
 			name = Assets;
+			sourceTree = "<group>";
+		};
+		1A1434C1199EED5100B6411D /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				1A1434BB199EE8D900B6411D /* TeamDataModel.xcdatamodeld */,
+				1A1434BE199EECF000B6411D /* Team.h */,
+				1A1434BF199EECF000B6411D /* Team.m */,
+			);
+			name = "Data Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,7 +314,8 @@
 				0CA0ABF5192E2C40000D681B /* main.m in Sources */,
 				0CA0ABF9192E2C40000D681B /* OCTAppDelegate.m in Sources */,
 				0CA0AC02192E2C40000D681B /* OCTMasterViewController.m in Sources */,
-				1A1434BA199EE75100B6411D /* TeamDataModel.xcdatamodeld in Sources */,
+				1A1434C0199EECF000B6411D /* Team.m in Sources */,
+				1A1434BD199EE8D900B6411D /* TeamDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,14 +548,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		1A1434B8199EE75100B6411D /* TeamDataModel.xcdatamodeld */ = {
+		1A1434BB199EE8D900B6411D /* TeamDataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				1A1434B9199EE75100B6411D /* TeamDataModel.xcdatamodel */,
+				1A1434BC199EE8D900B6411D /* TeamDataModel.xcdatamodel */,
 			);
-			currentVersion = 1A1434B9199EE75100B6411D /* TeamDataModel.xcdatamodel */;
+			currentVersion = 1A1434BC199EE8D900B6411D /* TeamDataModel.xcdatamodel */;
 			name = TeamDataModel.xcdatamodeld;
-			path = "../../Skyrise Scout bad/Skyrise Scout/TeamDataModel.xcdatamodeld";
+			path = ../TeamDataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
