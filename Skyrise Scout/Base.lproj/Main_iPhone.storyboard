@@ -61,6 +61,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Teams" id="tQt-TN-PWz"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +97,7 @@
                                                 <rect key="frame" x="160" y="60" width="150" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="School Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3f-ag-2Ob" userLabel="School Name Field">
                                                 <rect key="frame" x="160" y="110" width="150" height="30"/>
@@ -107,6 +108,10 @@
                                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="spO-Kl-kGg" userLabel="Robot Picture">
                                                 <rect key="frame" x="10" y="10" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="F9d-4C-wny" appends="YES" id="Xe5-H5-YQo"/>
+                                                </connections>
                                             </imageView>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcd-ez-pji" userLabel="Divider">
                                                 <rect key="frame" x="10" y="155" width="300" height="1"/>
@@ -124,6 +129,9 @@
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Efu-hn-TM0" userLabel="Drive Speed Slider">
                                                 <rect key="frame" x="60" y="196" width="200" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <connections>
+                                                    <action selector="driveSpeedSliderChanged:" destination="Ah7-4n-0Wa" eventType="valueChanged" id="Wzg-Xp-JrO"/>
+                                                </connections>
                                             </slider>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slow.png" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-Kw-2VS" userLabel="Slow.png">
                                                 <rect key="frame" x="10" y="186" width="40" height="40"/>
@@ -152,7 +160,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dUg-9J-79E" userLabel="Lift Speed Slider">
+                                            <slider opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dUg-9J-79E" userLabel="Lift Speed Slider">
                                                 <rect key="frame" x="60" y="327" width="200" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </slider>
@@ -174,7 +182,7 @@
                                                 <rect key="frame" x="10" y="417" width="300" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrd-8c-S5b" userLabel="Divider">
                                                 <rect key="frame" x="10" y="462" width="300" height="1"/>
@@ -264,12 +272,49 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="900"/>
                     <connections>
-                        <outlet property="robotPicture" destination="spO-Kl-kGg" id="hR9-az-9ix"/>
+                        <outlet property="autonConsistencySlider" destination="EVt-fh-fzb" id="eGc-KR-U8E"/>
+                        <outlet property="autonPointsField" destination="5Cv-sw-sfR" id="auM-gF-X43"/>
+                        <outlet property="canBuildSkyriseSwitch" destination="moL-5q-wIY" id="74g-9J-Pco"/>
+                        <outlet property="driveSpeedSlider" destination="Efu-hn-TM0" id="wdY-82-QIm"/>
+                        <outlet property="driveTypeField" destination="N1F-S4-qEY" id="qnA-kO-IlX"/>
+                        <outlet property="liftMaxHeightField" destination="rgF-O2-BGX" id="ftx-3m-hKK"/>
+                        <outlet property="liftSpeedSlider" destination="dUg-9J-79E" id="vh2-bh-KdB"/>
+                        <outlet property="liftTypeField" destination="Tqk-Pk-bO2" id="Ebf-4z-p66"/>
+                        <outlet property="maxSectionsField" destination="eey-Uq-x1i" id="uyk-bM-bfU"/>
+                        <outlet property="robotPicture" destination="spO-Kl-kGg" id="VTg-9H-6dl"/>
+                        <outlet property="robotPictureTapRecognizer" destination="F9d-4C-wny" id="Tqt-ux-qcL"/>
+                        <outlet property="schoolNameField" destination="F3f-ag-2Ob" id="SPO-2u-DDj"/>
+                        <outlet property="teamNameField" destination="qx9-sG-fSf" id="YmY-WT-Xbg"/>
+                        <outlet property="teamNumberField" destination="QTW-jp-VBt" id="GCL-i2-w5T"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="F9d-4C-wny">
+                    <connections>
+                        <action selector="robotPictureTapped:" destination="Ah7-4n-0Wa" id="J9n-mQ-qTV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="928" y="-102"/>
+        </scene>
+        <!--Picture Chooser View Controller-->
+        <scene sceneID="3X1-0E-LXO">
+            <objects>
+                <viewController id="OtX-GM-dBZ" customClass="OCTPictureChooserViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Mg7-Xc-m0t"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ohs-S8-LRs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Eq7-C2-ePy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uX0-Lb-10p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1415" y="64"/>
         </scene>
     </scenes>
     <resources>

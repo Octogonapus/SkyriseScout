@@ -24,6 +24,9 @@
 		0CA0AC18192E2C41000D681B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CA0AC16192E2C41000D681B /* InfoPlist.strings */; };
 		0CA0AC1A192E2C41000D681B /* Skyrise_ScoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA0AC19192E2C41000D681B /* Skyrise_ScoutTests.m */; };
 		0CA0AC24192E2DD1000D681B /* robot-character.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0CA0AC23192E2DD1000D681B /* robot-character.jpg */; };
+		1A1434AA199ECC7200B6411D /* OCTPictureChooserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A1434A9199ECC7200B6411D /* OCTPictureChooserViewController.m */; };
+		1A1434AF199EE21500B6411D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1434AE199EE21500B6411D /* CoreData.framework */; };
+		1A1434B2199EE25E00B6411D /* TeamDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1A1434B0199EE25E00B6411D /* TeamDataModel.xcdatamodeld */; };
 		1A8E46A5192EAB400083F7D9 /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A4192EAB400083F7D9 /* thumb_up.png */; };
 		1A8E46A7192EABD30083F7D9 /* thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A6192EABD30083F7D9 /* thumb_down.png */; };
 		1A8E46A9192EABDA0083F7D9 /* slow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A8192EABDA0083F7D9 /* slow.png */; };
@@ -64,6 +67,10 @@
 		0CA0AC17192E2C41000D681B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0CA0AC19192E2C41000D681B /* Skyrise_ScoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Skyrise_ScoutTests.m; sourceTree = "<group>"; };
 		0CA0AC23192E2DD1000D681B /* robot-character.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "robot-character.jpg"; sourceTree = "<group>"; };
+		1A1434A8199ECC7200B6411D /* OCTPictureChooserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTPictureChooserViewController.h; sourceTree = "<group>"; };
+		1A1434A9199ECC7200B6411D /* OCTPictureChooserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTPictureChooserViewController.m; sourceTree = "<group>"; };
+		1A1434AE199EE21500B6411D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		1A1434B1199EE25E00B6411D /* TeamDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TeamDataModel.xcdatamodel; sourceTree = "<group>"; };
 		1A8E46A4192EAB400083F7D9 /* thumb_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_up.png; sourceTree = "<group>"; };
 		1A8E46A6192EABD30083F7D9 /* thumb_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumb_down.png; sourceTree = "<group>"; };
 		1A8E46A8192EABDA0083F7D9 /* slow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slow.png; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1434AF199EE21500B6411D /* CoreData.framework in Frameworks */,
 				0CA0ABEB192E2C40000D681B /* CoreGraphics.framework in Frameworks */,
 				0CA0ABED192E2C40000D681B /* UIKit.framework in Frameworks */,
 				0CA0ABE9192E2C40000D681B /* Foundation.framework in Frameworks */,
@@ -97,6 +105,7 @@
 		0CA0ABDC192E2C40000D681B = {
 			isa = PBXGroup;
 			children = (
+				1A1434B0199EE25E00B6411D /* TeamDataModel.xcdatamodeld */,
 				0CA0ABEE192E2C40000D681B /* Skyrise Scout */,
 				0CA0AC13192E2C41000D681B /* Skyrise ScoutTests */,
 				0CA0ABE7192E2C40000D681B /* Frameworks */,
@@ -116,6 +125,7 @@
 		0CA0ABE7192E2C40000D681B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A1434AE199EE21500B6411D /* CoreData.framework */,
 				0CA0ABE8192E2C40000D681B /* Foundation.framework */,
 				0CA0ABEA192E2C40000D681B /* CoreGraphics.framework */,
 				0CA0ABEC192E2C40000D681B /* UIKit.framework */,
@@ -135,6 +145,8 @@
 				0CA0AC01192E2C40000D681B /* OCTMasterViewController.m */,
 				0CA0AC03192E2C40000D681B /* OCTDetailViewController.h */,
 				0CA0AC04192E2C40000D681B /* OCTDetailViewController.m */,
+				1A1434A8199ECC7200B6411D /* OCTPictureChooserViewController.h */,
+				1A1434A9199ECC7200B6411D /* OCTPictureChooserViewController.m */,
 				0CA0AC06192E2C40000D681B /* Images.xcassets */,
 				0CA0AC26192E2DF0000D681B /* Assets */,
 				0CA0ABEF192E2C40000D681B /* Supporting Files */,
@@ -290,10 +302,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1434B2199EE25E00B6411D /* TeamDataModel.xcdatamodeld in Sources */,
 				0CA0AC05192E2C40000D681B /* OCTDetailViewController.m in Sources */,
 				0CA0ABF5192E2C40000D681B /* main.m in Sources */,
 				0CA0ABF9192E2C40000D681B /* OCTAppDelegate.m in Sources */,
 				0CA0AC02192E2C40000D681B /* OCTMasterViewController.m in Sources */,
+				1A1434AA199ECC7200B6411D /* OCTPictureChooserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +538,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1A1434B0199EE25E00B6411D /* TeamDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1A1434B1199EE25E00B6411D /* TeamDataModel.xcdatamodel */,
+			);
+			currentVersion = 1A1434B1199EE25E00B6411D /* TeamDataModel.xcdatamodel */;
+			path = TeamDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0CA0ABDD192E2C40000D681B /* Project object */;
 }
