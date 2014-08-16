@@ -129,9 +129,6 @@
                                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Efu-hn-TM0" userLabel="Drive Speed Slider">
                                                 <rect key="frame" x="60" y="196" width="200" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <connections>
-                                                    <action selector="driveSpeedSliderChanged:" destination="Ah7-4n-0Wa" eventType="valueChanged" id="Wzg-Xp-JrO"/>
-                                                </connections>
                                             </slider>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slow.png" translatesAutoresizingMaskIntoConstraints="NO" id="R2o-Kw-2VS" userLabel="Slow.png">
                                                 <rect key="frame" x="10" y="186" width="40" height="40"/>
