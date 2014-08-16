@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "OCTDetailViewController.h"
+#import "OCTAppDelegate.h"
 
 @class OCTDetailViewController;
 

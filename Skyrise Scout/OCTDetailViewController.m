@@ -136,10 +136,22 @@
     
     if (team == nil)
     {
+        //Team does not exist yet, make a new one
         NSManagedObject *newTeam;
         newTeam = [NSEntityDescription insertNewObjectForEntityForName:@"Team" inManagedObjectContext:context];
+        [newTeam setValue:UIImagePNGRepresentation(self.robotPicture.image) forKey:@"robotPicture"];
         [newTeam setValue:self.teamNameField.text forKey:@"teamName"];
         [newTeam setValue:self.teamNumberField.text forKey:@"teamNumber"];
+        [newTeam setValue:self.schoolNameField.text forKey:@"schoolName"];
+        [newTeam setValue:[NSNumber numberWithFloat:self.driveSpeedSlider.value] forKey:@"driveSpeed"];
+        [newTeam setValue:self.driveTypeField.text forKey:@"driveType"];
+        [newTeam setValue:[NSNumber numberWithFloat:self.liftSpeedSlider.value] forKey:@"liftSpeed"];
+        [newTeam setValue:self.liftTypeField.text forKey:@"liftType"];
+        [newTeam setValue:self.liftMaxHeightField.text forKey:@"liftMaxHeight"];
+        [newTeam setValue:[NSNumber numberWithFloat:self.autonConsistencySlider.value] forKey:@"autonConsistency"];
+        [newTeam setValue:self.autonPointsField.text forKey:@"autonPoints"];
+        [newTeam setValue:[NSNumber numberWithBool:self.canBuildSkyriseSwitch.isOn] forKey:@"canBuildSkyrise"];
+        [newTeam setValue:self.maxSectionsField.text forKey:@"maxSections"];
         NSError *error;
         [context save:&error];
         if (error != nil)
@@ -149,8 +161,20 @@
     }
     else
     {
+        //Team already exists, update that one
+        [team setValue:UIImagePNGRepresentation(self.robotPicture.image) forKey:@"robotPicture"];
         [team setValue:self.teamNameField.text forKey:@"teamName"];
         [team setValue:self.teamNumberField.text forKey:@"teamNumber"];
+        [team setValue:self.schoolNameField.text forKey:@"schoolName"];
+        [team setValue:[NSNumber numberWithFloat:self.driveSpeedSlider.value] forKey:@"driveSpeed"];
+        [team setValue:self.driveTypeField.text forKey:@"driveType"];
+        [team setValue:[NSNumber numberWithFloat:self.liftSpeedSlider.value] forKey:@"liftSpeed"];
+        [team setValue:self.liftTypeField.text forKey:@"liftType"];
+        [team setValue:self.liftMaxHeightField.text forKey:@"liftMaxHeight"];
+        [team setValue:[NSNumber numberWithFloat:self.autonConsistencySlider.value] forKey:@"autonConsistency"];
+        [team setValue:self.autonPointsField.text forKey:@"autonPoints"];
+        [team setValue:[NSNumber numberWithBool:self.canBuildSkyriseSwitch.isOn] forKey:@"canBuildSkyrise"];
+        [team setValue:self.maxSectionsField.text forKey:@"maxSections"];
         NSError *error;
         [context save:&error];
         if (error != nil)
@@ -181,8 +205,19 @@
     if ([objects count] != 0)
     {
         matches = objects[0];
+        self.robotPicture.image = [UIImage imageWithData:[matches valueForKey:@"robotPicture"]];
         //self.teamNameField.text is already set from the segue
         self.teamNumberField.text = [matches valueForKey:@"teamNumber"];
+        self.schoolNameField.text = [matches valueForKey:@"schoolName"];
+        [self.driveSpeedSlider setValue:[[matches valueForKey:@"driveSpeed"] floatValue]];
+        self.driveTypeField.text = [matches valueForKey:@"driveType"];
+        [self.liftSpeedSlider setValue:[[matches valueForKey:@"liftSpeed"] floatValue]];
+        self.liftTypeField.text = [matches valueForKey:@"liftType"];
+        self.liftMaxHeightField.text = [matches valueForKey:@"liftMaxHeight"];
+        [self.autonConsistencySlider setValue:[[matches valueForKey:@"autonConsistency"] floatValue]];
+        self.autonPointsField.text = [matches valueForKey:@"autonPoints"];
+        [self.canBuildSkyriseSwitch setOn:[[matches valueForKey:@"canBuildSkyrise"] boolValue] animated:YES];
+        self.maxSectionsField.text = [matches valueForKey:@"maxSections"];
     }
 }
 

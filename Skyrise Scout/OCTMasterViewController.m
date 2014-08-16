@@ -82,6 +82,10 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
+        OCTAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+        NSManagedObjectContext *context = [appDelegate managedObjectContext];
+        [context deleteObject:[self loadAndGetWithName:_objects[indexPath.row]]];
+        
         [_objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
@@ -122,6 +126,33 @@
     [userDefaults synchronize];
     
     [self.tableView reloadData];
+}
+
+#pragma mark - Core Data
+
+- (NSManagedObject *)loadAndGetWithName:(NSString *)name
+{
+    OCTAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Team" inManagedObjectContext:context];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamName = %@)", name];
+    [request setPredicate:pred];
+    
+    NSError *error;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    
+    if ([objects count] != 0)
+    {
+        return objects[0];
+    }
+    
+    return nil;
 }
 
 @end
