@@ -24,7 +24,6 @@
 		0CA0AC18192E2C41000D681B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CA0AC16192E2C41000D681B /* InfoPlist.strings */; };
 		0CA0AC1A192E2C41000D681B /* Skyrise_ScoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA0AC19192E2C41000D681B /* Skyrise_ScoutTests.m */; };
 		0CA0AC24192E2DD1000D681B /* robot-character.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0CA0AC23192E2DD1000D681B /* robot-character.jpg */; };
-		1A1434AF199EE21500B6411D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1434AE199EE21500B6411D /* CoreData.framework */; };
 		1A8E46A5192EAB400083F7D9 /* thumb_up.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A4192EAB400083F7D9 /* thumb_up.png */; };
 		1A8E46A7192EABD30083F7D9 /* thumb_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A6192EABD30083F7D9 /* thumb_down.png */; };
 		1A8E46A9192EABDA0083F7D9 /* slow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A8E46A8192EABDA0083F7D9 /* slow.png */; };
@@ -77,7 +76,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A1434AF199EE21500B6411D /* CoreData.framework in Frameworks */,
 				0CA0ABEB192E2C40000D681B /* CoreGraphics.framework in Frameworks */,
 				0CA0ABED192E2C40000D681B /* UIKit.framework in Frameworks */,
 				0CA0ABE9192E2C40000D681B /* Foundation.framework in Frameworks */,
