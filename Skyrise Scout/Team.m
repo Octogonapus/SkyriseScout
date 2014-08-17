@@ -2,7 +2,7 @@
 //  Team.m
 //  Skyrise Scout
 //
-//  Created by Octogonaus on 8/15/14.
+//  Created by Ryan Benasutti on 8/17/14.
 //  Copyright (c) 2014 Octogonaus. All rights reserved.
 //
 
@@ -11,18 +11,20 @@
 
 @implementation Team
 
-@dynamic robotPicture;
-@dynamic teamName;
-@dynamic teamNumber;
-@dynamic schoolName;
-@dynamic driveSpeed;
-@dynamic driveType;
-@dynamic liftSpeed;
-@dynamic liftType;
-@dynamic liftMaxHeight;
 @dynamic autonConsistency;
 @dynamic autonPoints;
 @dynamic canBuildSkyrise;
+@dynamic driveSpeed;
+@dynamic driveType;
+@dynamic liftMaxHeight;
+@dynamic liftSpeed;
+@dynamic liftType;
 @dynamic maxSections;
+@dynamic robotPicture;
+@dynamic schoolName;
+@dynamic teamName;
+@dynamic teamNumber;
+@dynamic intakeSpeed;
+@dynamic maxHeldCubes;
 
 @end

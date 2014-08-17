@@ -49,6 +49,17 @@
     ((UIScrollView *)[self.view viewWithTag:100]).keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.robotPicturePopup = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a Photo", @"Choose a Photo", nil];
     [self load];
+    
+    //Make keyboard dismiss
+    self.teamNameField.delegate = self;
+    self.teamNumberField.delegate = self;
+    self.schoolNameField.delegate = self;
+    self.driveTypeField.delegate = self;
+    self.liftTypeField.delegate = self;
+    self.liftMaxHeightField.delegate = self;
+    self.autonPointsField.delegate = self;
+    self.maxSectionsField.delegate = self;
+    self.maxHeldCubesField.delegate = self;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -61,6 +72,14 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Keyboard
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - RobotPicture
@@ -152,6 +171,8 @@
         [newTeam setValue:self.autonPointsField.text forKey:@"autonPoints"];
         [newTeam setValue:[NSNumber numberWithBool:self.canBuildSkyriseSwitch.isOn] forKey:@"canBuildSkyrise"];
         [newTeam setValue:self.maxSectionsField.text forKey:@"maxSections"];
+        [newTeam setValue:[NSNumber numberWithFloat:self.intakeSpeedSlider.value] forKeyPath:@"intakeSpeed"];
+        [newTeam setValue:self.maxHeldCubesField.text forKeyPath:@"maxHeldCubes"];
         NSError *error;
         [context save:&error];
         if (error != nil)
@@ -175,6 +196,8 @@
         [team setValue:self.autonPointsField.text forKey:@"autonPoints"];
         [team setValue:[NSNumber numberWithBool:self.canBuildSkyriseSwitch.isOn] forKey:@"canBuildSkyrise"];
         [team setValue:self.maxSectionsField.text forKey:@"maxSections"];
+        [team setValue:[NSNumber numberWithFloat:self.intakeSpeedSlider.value] forKeyPath:@"intakeSpeed"];
+        [team setValue:self.maxHeldCubesField.text forKeyPath:@"maxHeldCubes"];
         NSError *error;
         [context save:&error];
         if (error != nil)
@@ -218,6 +241,8 @@
         self.autonPointsField.text = [matches valueForKey:@"autonPoints"];
         [self.canBuildSkyriseSwitch setOn:[[matches valueForKey:@"canBuildSkyrise"] boolValue] animated:YES];
         self.maxSectionsField.text = [matches valueForKey:@"maxSections"];
+        [self.intakeSpeedSlider setValue:[[matches valueForKey:@"intakeSpeed"] floatValue]];
+        self.maxHeldCubesField.text = [matches valueForKey:@"maxHeldCubes"];
     }
 }
 

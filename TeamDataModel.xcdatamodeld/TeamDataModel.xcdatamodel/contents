@@ -6,9 +6,11 @@
         <attribute name="canBuildSkyrise" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="driveSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="driveType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intakeSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="liftMaxHeight" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="liftSpeed" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="liftType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="maxHeldCubes" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="maxSections" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="robotPicture" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="schoolName" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,6 +18,6 @@
         <attribute name="teamNumber" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Team" positionX="-189" positionY="545" width="128" height="238"/>
+        <element name="Team" positionX="-189" positionY="545" width="128" height="270"/>
     </elements>
 </model>

@@ -79,15 +79,15 @@
                         <viewControllerLayoutGuide type="bottom" id="ycN-rS-wCP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MMQ-IT-qOo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="920"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-hd-QRI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="900"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="920"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iee-9b-wTT">
-                                        <rect key="frame" x="0.0" y="65" width="320" height="835"/>
+                                        <rect key="frame" x="0.0" y="65" width="320" height="920"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Team Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qx9-sG-fSf" userLabel="Team Name Field">
@@ -222,7 +222,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="During A Match" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stU-R1-RgI" userLabel="During A Match">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Skyrise" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stU-R1-RgI" userLabel="Skyrise">
                                                 <rect key="frame" x="0.0" y="612" width="320" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -244,10 +244,41 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                                             </textField>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKa-Sf-2r9" userLabel="Divider">
+                                                <rect key="frame" x="10" y="724" width="300" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Intake Speed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3f-SK-CnW" userLabel="Intake Speed">
+                                                <rect key="frame" x="0.0" y="734" width="320" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="slow.png" translatesAutoresizingMaskIntoConstraints="NO" id="3jv-WW-X3s" userLabel="Slow.png">
+                                                <rect key="frame" x="10" y="760" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fast.png" translatesAutoresizingMaskIntoConstraints="NO" id="hha-sy-zjr" userLabel="Fast.png">
+                                                <rect key="frame" x="270" y="760" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fVI-A8-B0w" userLabel="Intake Speed Slider">
+                                                <rect key="frame" x="60" y="765" width="200" height="31"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </slider>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Maximum Held Cubes" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-gu-yp6" userLabel="Maximum Held Cubes Field">
+                                                <rect key="frame" x="10" y="815" width="300" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="900" id="BI0-y2-LWj"/>
+                                            <constraint firstAttribute="height" constant="920" id="BI0-y2-LWj"/>
                                             <constraint firstAttribute="width" constant="320" id="yT4-fn-pHq"/>
                                         </constraints>
                                     </view>
@@ -270,16 +301,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Team" id="Ypi-73-Zw9"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="900"/>
+                    <size key="freeformSize" width="320" height="920"/>
                     <connections>
                         <outlet property="autonConsistencySlider" destination="EVt-fh-fzb" id="eGc-KR-U8E"/>
                         <outlet property="autonPointsField" destination="5Cv-sw-sfR" id="auM-gF-X43"/>
                         <outlet property="canBuildSkyriseSwitch" destination="moL-5q-wIY" id="74g-9J-Pco"/>
                         <outlet property="driveSpeedSlider" destination="Efu-hn-TM0" id="wdY-82-QIm"/>
                         <outlet property="driveTypeField" destination="N1F-S4-qEY" id="qnA-kO-IlX"/>
+                        <outlet property="intakeSpeedSlider" destination="fVI-A8-B0w" id="o66-Ze-bCP"/>
                         <outlet property="liftMaxHeightField" destination="rgF-O2-BGX" id="ftx-3m-hKK"/>
                         <outlet property="liftSpeedSlider" destination="dUg-9J-79E" id="vh2-bh-KdB"/>
                         <outlet property="liftTypeField" destination="Tqk-Pk-bO2" id="Ebf-4z-p66"/>
+                        <outlet property="maxHeldCubesField" destination="eHp-gu-yp6" id="hhr-kX-NX4"/>
                         <outlet property="maxSectionsField" destination="eey-Uq-x1i" id="uyk-bM-bfU"/>
                         <outlet property="robotPicture" destination="spO-Kl-kGg" id="VTg-9H-6dl"/>
                         <outlet property="robotPictureTapRecognizer" destination="F9d-4C-wny" id="Tqt-ux-qcL"/>

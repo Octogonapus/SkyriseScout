@@ -14,7 +14,7 @@
 - (void)addItemViewController:(OCTDetailViewController *)controller didFinishEnteringItem:(NSString *)item forIndex:(NSInteger)index;
 @end
 
-@interface OCTDetailViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface OCTDetailViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
@@ -43,5 +43,9 @@
 
 @property (weak, nonatomic) IBOutlet UISwitch *canBuildSkyriseSwitch;
 @property (weak, nonatomic) IBOutlet UITextField *maxSectionsField;
+
+@property (weak, nonatomic) IBOutlet UISlider *intakeSpeedSlider;
+@property (weak, nonatomic) IBOutlet UITextField *maxHeldCubesField;
+
 
 @end
