@@ -55,7 +55,6 @@
     }
     self.teamNumberField.text = self.teamNumberRef;
     [self configureView];
-    ((UIScrollView *)[self.view viewWithTag:100]).keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.robotPicturePopup = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a Photo", @"Choose a Photo", nil];
     if (![self load])
     {
