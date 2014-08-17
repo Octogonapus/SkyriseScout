@@ -48,7 +48,10 @@
     [self configureView];
     ((UIScrollView *)[self.view viewWithTag:100]).keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.robotPicturePopup = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a Photo", @"Choose a Photo", nil];
-    [self load];
+    if (![self load])
+    {
+        self.robotPicture.image = [UIImage imageNamed:@"placeholder.png"];
+    }
     
     //Make keyboard dismiss
     self.teamNameField.delegate = self;
@@ -80,6 +83,26 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.35f];
+    CGRect frame = self.view.frame;
+    frame.origin.y -= 100;
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.35f];
+    CGRect frame = self.view.frame;
+    frame.origin.y += 100;
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
 }
 
 #pragma mark - RobotPicture
@@ -207,7 +230,7 @@
     }
 }
 
-- (void)load
+- (BOOL)load
 {
     OCTAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
@@ -243,7 +266,9 @@
         self.maxSectionsField.text = [matches valueForKey:@"maxSections"];
         [self.intakeSpeedSlider setValue:[[matches valueForKey:@"intakeSpeed"] floatValue]];
         self.maxHeldCubesField.text = [matches valueForKey:@"maxHeldCubes"];
+        return YES;
     }
+    return NO;
 }
 
 - (BOOL)checkLoad
