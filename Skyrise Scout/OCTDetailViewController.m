@@ -37,14 +37,23 @@
 
     if (self.detailItem)
     {
-        self.detailDescriptionLabel.text = self.teamNameRef;
+        self.detailDescriptionLabel.text = self.teamNumberRef;
     }
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.teamNameField.text = self.teamNameRef;
+    if ([self.teamNumberRef isEqualToString:@"New Team"])
+    {
+        self.teamNumberRef = @"";
+        self.navItemTitle.title = @"New Team";
+    }
+    else
+    {
+        self.navItemTitle.title = self.teamNumberRef;
+    }
+    self.teamNumberField.text = self.teamNumberRef;
     [self configureView];
     ((UIScrollView *)[self.view viewWithTag:100]).keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.robotPicturePopup = [[UIActionSheet alloc] initWithTitle:@"" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Take a Photo", @"Choose a Photo", nil];
@@ -68,7 +77,7 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [self save];
-    [self.delegate addItemViewController:self didFinishEnteringItem:self.teamNameField.text forIndex:self.index];
+    [self.delegate addItemViewController:self didFinishEnteringItem:self.teamNumberField.text forIndex:self.index];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,7 +93,7 @@
     [textField resignFirstResponder];
     return YES;
 }
-
+/*
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [UIView beginAnimations:nil context:NULL];
@@ -104,7 +113,7 @@
     [self.view setFrame:frame];
     [UIView commitAnimations];
 }
-
+*/
 #pragma mark - RobotPicture
 
 - (IBAction)robotPictureTapped:(id)sender
@@ -241,7 +250,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamName = %@)", self.teamNameField.text];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamNumber = %@)", self.teamNumberField.text];
     [request setPredicate:pred];
     NSManagedObject *matches = nil;
     
@@ -252,8 +261,8 @@
     {
         matches = objects[0];
         self.robotPicture.image = [UIImage imageWithData:[matches valueForKey:@"robotPicture"]];
-        //self.teamNameField.text is already set from the segue
-        self.teamNumberField.text = [matches valueForKey:@"teamNumber"];
+        self.teamNameField.text = [matches valueForKey:@"teamName"];
+        //self.teamNumberField.text is already set from the segue
         self.schoolNameField.text = [matches valueForKey:@"schoolName"];
         [self.driveSpeedSlider setValue:[[matches valueForKey:@"driveSpeed"] floatValue]];
         self.driveTypeField.text = [matches valueForKey:@"driveType"];
@@ -282,7 +291,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamName = %@)", self.teamNameField.text];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamNumber = %@)", self.teamNumberField.text];
     [request setPredicate:pred];
     
     NSError *error;
@@ -302,7 +311,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamName = %@)", self.teamNameField.text];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamNumber = %@)", self.teamNumberField.text];
     [request setPredicate:pred];
     
     NSError *error;

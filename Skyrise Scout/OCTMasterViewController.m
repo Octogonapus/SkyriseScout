@@ -32,7 +32,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (OCTDetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    _objects = [[NSMutableArray alloc] initWithArray:[userDefaults objectForKey:@"teamNames"]];
+    _objects = [[NSMutableArray alloc] initWithArray:[userDefaults objectForKey:@"teamNumbers"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -84,7 +84,7 @@
     {
         OCTAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        [context deleteObject:[self loadAndGetWithName:_objects[indexPath.row]]];
+        [context deleteObject:[self loadAndGetWithNumber:_objects[indexPath.row]]];
         
         [_objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
@@ -109,7 +109,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"])
     {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        [[segue destinationViewController] setTeamNameRef:_objects[indexPath.row]];
+        [[segue destinationViewController] setTeamNumberRef:_objects[indexPath.row]];
         [[segue destinationViewController] setDelegate:self];
         [[segue destinationViewController] setIndex:indexPath.row];
     }
@@ -122,7 +122,7 @@
     [_objects replaceObjectAtIndex:index withObject:item];
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:_objects forKey:@"teamNames"];
+    [userDefaults setObject:_objects forKey:@"teamNumbers"];
     [userDefaults synchronize];
     
     [self.tableView reloadData];
@@ -130,7 +130,7 @@
 
 #pragma mark - Core Data
 
-- (NSManagedObject *)loadAndGetWithName:(NSString *)name
+- (NSManagedObject *)loadAndGetWithNumber:(NSString *)number
 {
     OCTAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     
@@ -141,7 +141,7 @@
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDesc];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamName = %@)", name];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"(teamNumber = %@)", number];
     [request setPredicate:pred];
     
     NSError *error;

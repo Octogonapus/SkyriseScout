@@ -19,10 +19,11 @@
 @property (strong, nonatomic) id detailItem;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navItemTitle;
 
 @property (weak, nonatomic) id<OCTDetailViewController> delegate;
 @property (nonatomic) NSInteger index;
-@property (weak, nonatomic) NSString *teamNameRef;
+@property (weak, nonatomic) NSString *teamNumberRef;
 
 @property (weak, nonatomic) IBOutlet UIImageView *robotPicture;
 @property (weak, nonatomic) IBOutlet UITapGestureRecognizer *robotPictureTapRecognizer;

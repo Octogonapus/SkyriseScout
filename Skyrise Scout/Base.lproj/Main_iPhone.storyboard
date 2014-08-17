@@ -314,6 +314,7 @@
                         <outlet property="liftTypeField" destination="Tqk-Pk-bO2" id="Ebf-4z-p66"/>
                         <outlet property="maxHeldCubesField" destination="eHp-gu-yp6" id="hhr-kX-NX4"/>
                         <outlet property="maxSectionsField" destination="eey-Uq-x1i" id="uyk-bM-bfU"/>
+                        <outlet property="navItemTitle" destination="Ypi-73-Zw9" id="aao-LV-xBi"/>
                         <outlet property="robotPicture" destination="spO-Kl-kGg" id="VTg-9H-6dl"/>
                         <outlet property="robotPictureTapRecognizer" destination="F9d-4C-wny" id="Tqt-ux-qcL"/>
                         <outlet property="schoolNameField" destination="F3f-ag-2Ob" id="SPO-2u-DDj"/>
