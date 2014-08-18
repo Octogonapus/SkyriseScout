@@ -84,7 +84,11 @@
     {
         OCTAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
         NSManagedObjectContext *context = [appDelegate managedObjectContext];
-        [context deleteObject:[self loadAndGetWithNumber:_objects[indexPath.row]]];
+        NSManagedObject *deleteMe = [self loadAndGetWithNumber:_objects[indexPath.row]];
+        if (deleteMe != nil)
+        {
+            [context deleteObject:deleteMe];
+        }
         
         [_objects removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
